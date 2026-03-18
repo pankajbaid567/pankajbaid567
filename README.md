@@ -128,7 +128,7 @@ A fast recipe discovery platform focused on authentic Indian recipes
 
 ## 🌐 Connect With Me
 
-- 💼 LinkedIn: https://www.linkedin.com/in/pankaj-baid-0109b1226/
+
 - 🧑‍💻 Portfolio: **(Add Link)**
 - 🧠 LeetCode: https://leetcode.com/u/baidpankaj567/
 - 🏁 CodeChef: https://www.codechef.com/users/baidpankaj567

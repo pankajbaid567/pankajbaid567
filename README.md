@@ -1,7 +1,7 @@
 # Hi 👋, I'm Pankaj Baid
 
 🚀 **Full Stack Developer | AI Undergrad | Backend & System Builder**  
-🎓 B.Tech (Artificial Intelligence) @ Newton School of Technology, Rishihood University  
+🎓 B.Tech (Artificial Intelligence) , 
 💡 Passionate about building scalable full-stack products, optimizing backend performance, and solving real-world problems through engineering.
 
 ---

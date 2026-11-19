@@ -15,7 +15,8 @@ I build retrieval, agent and backend systems, deploy them, and measure them. Eve
 
 | Project | What it is | Evidence |
 |---|---|---|
-| [Codicil](https://github.com/pankajbaid567/codicil) | Cited, abstaining RAG over 17 RBI Directions in English, Hindi and Hinglish. Hybrid BM25 + dense retrieval, RRF, cross-encoder rerank. [Live](https://codicil.onrender.com) | Held-out nDCG@10 0.787 vs 0.663 for BM25, R@10 0.957; 63 tests, mutation check 15/15 |
+| [Codicil](https://github.com/pankajbaid567/codicil) | Cited, abstaining RAG over 17 RBI Directions in English, Hindi and Hinglish. Hybrid BM25 + dense retrieval, RRF, cross-encoder rerank; LLM answer mode on Amazon Bedrock; S3 Vectors and Qdrant behind one port; weekly corpus-freshness job. [Live](https://codicil.3-109-36-90.sslip.io) | Held-out nDCG@10 0.800 vs 0.663 for BM25, R@10 0.978; English abstention precision 1.00 / recall 0.81; 127 tests, mutation check 34/34. Labels are AI-drafted and not yet reviewed by me |
+| [Reliable AI Agent](https://github.com/pankajbaid567/resilient-multi-agent-orchestrator) | LangGraph multi-agent task runner that keeps working when models fail: plan approval, parallel steps, a reviewer, retries, model fallback chain, circuit breakers, checkpointed resume. On AWS EC2 with Amazon Bedrock through an IAM role (no stored keys). [Live](https://reliable-agent.pages.dev) | Simulated outage: 0% to 100% of tasks answered (1,080 seeded runs). Live Bedrock eval: the first version lost to a single call by 16.7 points; after fixing what it found it ties (CI −1.7 to +8.3) at 72% lower cost per task. 101 tests, mutation check 14/14 |
 | [HireFlow AI](https://github.com/pankajbaid567/hireflow) | Career assistant built by a 5-person team (I maintained the repo, reviewed PRs and integrated modules): Python agents for job discovery, resume tailoring and interview prep, plus Cloudflare Workers, D1 and Queues. [Live](https://hireflow-dashboard.pages.dev) | Hybrid BGE matching: nDCG@3 0.70 to 0.95 on a 120-case author-labelled benchmark; 39 tenant-isolation probes, 0 leaks |
 | [VITRAM](https://github.com/pankajbaid567/vitram) | Financial companion for salaried users in India. A Gemini tool-calling assistant can only narrate verified calculations; any amount that doesn't match a tool result is replaced. [Live](https://vitram.baidpankaj567.workers.dev) | 129-operation FastAPI API, 656 tests (88% coverage), k6 213 req/s per process (synthetic) |
 | [Warrantgate](https://github.com/pankajbaid567/warrantgate) | Gateway for MCP agent tool calls: policy engine, human approvals, hash-chained audit log | 374-trace synthetic attack suite, 78.9% held-out recall; 8/8 injected bugs caught |
@@ -40,9 +41,9 @@ I build retrieval, agent and backend systems, deploy them, and measure them. Eve
 
 ## Stack
 **Languages:** Python, TypeScript, JavaScript, Go, Java, C++, SQL
-**AI:** RAG, hybrid retrieval, embeddings (e5, BGE), cross-encoder reranking, Qdrant, FAISS, Gemini, MCP, LangGraph, evaluation (nDCG, recall, abstention)
+**AI:** RAG, hybrid retrieval, embeddings (e5, BGE), cross-encoder reranking, Qdrant, Amazon S3 Vectors, FAISS, Amazon Bedrock, Gemini, MCP, LangGraph, OpenTelemetry, evaluation (nDCG, recall, abstention, AI-judged pairwise comparison)
 **Backend and data:** FastAPI, Node.js, Express, Fastify, Spring Boot, PostgreSQL, Redis, MongoDB
-**Cloud and tools:** Cloudflare Workers / D1 / Queues, Render, Neon, AWS EC2, Docker, GitHub Actions, k6
+**Cloud and tools:** AWS (EC2, IAM roles, Bedrock, S3 Vectors, Systems Manager), Cloudflare Workers / D1 / Queues / Pages, Render, Neon, Docker, systemd, GitHub Actions, k6
 
 ## Contact
 [LinkedIn](https://www.linkedin.com/in/pankaj-baid/) · [LeetCode](https://leetcode.com/u/baidpankaj567/) · [CodeChef](https://www.codechef.com/users/baidpankaj567) · pankaj.baid2024@nst.rishihood.edu.in
